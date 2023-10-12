@@ -1,0 +1,35 @@
+@mixin flex{
+       
+              display: flex;
+              justify-content:space-around ;
+              align-items: center;
+      
+}
+
+@mixin flex2{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       @content;
+}
+
+@mixin flex3 {
+       display: flex;
+       justify-content: center;
+       flex: 1;
+       flex-basis: 48%;
+}
+
+@mixin flex4{
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+       border-radius: 10px;
+       @content;
+}
+
+@mixin flex5{
+       flex-basis: 48%;
+       text-align: center;
+}

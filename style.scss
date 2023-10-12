@@ -1,0 +1,230 @@
+// sıfırlama
+@import "./flex";
+@import "./modules";
+@import "./color";
+@import "./button";
+
+@mixin mobile{
+       @media (max-width:800px){
+          @content  ;  
+       }
+}
+
+*{
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       text-decoration: none;
+}
+       
+// nav başlangıç
+
+nav{
+      @include flex;
+      @extend %nav;
+
+      .navigation{
+       display: flex;
+       gap: 10px;
+       font-size: 20px;
+       a{
+             @extend %a; 
+       }
+      }
+}
+
+// scss info başla
+
+.section{
+       @include flex3;
+
+       .container{
+              width: 99%;
+              height: 100%;
+
+              .css{
+                     @include flex4;
+                    
+
+                     .images{
+                        @include flex3; 
+                        
+                     }
+
+                     .css-sec{
+                         @include flex5; 
+                         h3{
+                            color: $primarcolor;
+
+                         }
+
+                         p{
+                            @extend %a;
+                         }
+                     }
+              }
+
+              .vs{
+                   text-align: center; 
+                   color: $text-color;
+                   font-size: 35px;
+
+                   span{
+                     color: $primarcolor;
+                   }
+              }
+
+            .sass{
+              @include flex4;
+              flex-direction: row-reverse;
+
+              .images{
+                     @include flex3;
+              }
+              .sass-sec{
+                     @include flex5;
+                     h3{
+                            color: $text-color;
+                     }
+                     p{
+                            @extend %a;
+                     }
+              }
+
+            }  
+       }
+}
+// info başlangıç
+
+
+.info-container{
+     .info{
+       
+       height: 500px;
+       width: 100%;
+       background-image: linear-gradient(255deg,
+       #ff3cac 0%,
+       #784ba0 50%,
+       #2b86c5 100%);
+       border-radius: 10px;
+       @include flex;
+       @include mobile{
+              flex-direction: column;
+       }
+
+       .info-sec{
+           text-align: center; 
+           h1{
+              color: #364a5e;
+           }
+           p{
+              color: white;
+              margin: 20px 0;
+           } 
+           .btn{
+              @include button;
+           } 
+       }
+     }    
+}
+
+// form başlangıç
+
+.form-container{
+       width: 100%;
+       height: 500px;
+       .form-area{
+              height: 100%;
+              width: 100%;
+              @include flex;
+           .images{
+              display: flex;
+              flex-direction: column;
+              img{
+                     width: 150px;
+              }
+           } 
+           
+         form{
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+              text-align: end;
+              width: 50%;
+
+              input{
+                     padding: 5px 0;
+                     border-radius: 5px;
+                     border: 1px solid gray;
+                     text-align: end;
+              }
+
+              .btn{
+                     text-align: center;
+                     margin-top: 30px;
+                     button{
+                            border: none;
+                           padding: 10px 20px; 
+                           border-radius: 10px;
+                           color: white;
+                           font-size: 30px;
+                           @include button;
+                     }
+              }
+              }
+         }  
+       }
+
+       // footer başlangıç
+
+   footer{
+       background-color: #364a5e;
+       width: 100%;
+       .footer-area{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              width: 100%;
+              .contact{
+                     @include flex;
+                     width: 80%;
+                     height: 200px;
+                     border-bottom: 1px solid;
+                     span{
+                            color: white;
+                     }
+              }
+
+              .footer-info{
+                     margin: 10px;
+                     width: 90%;
+                     display: flex;
+                     justify-content: space-between;
+                     .social-media{
+                            line-height: 25px;
+                            p{
+                                   white-space: nowrap;
+                                   span{
+                                          color: white;
+                                   }
+                            }
+                     }
+                     .logo{
+                            
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+                            a{
+                                   color: white;
+                                   font-size: 20px;
+                            }
+                     }
+                     .img{
+                            img{
+                                   width: 100px;
+                            }
+                     }
+              }
+       }
+   }    
